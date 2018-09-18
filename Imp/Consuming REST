@@ -1,0 +1,67 @@
+
+1.Create an URL object
+---------------------------------------------------------
+URL url = new URL( ServerConfig.getString("Our_url"));	
+
+2.Create a Connecion object
+------------------------------------------------------------------		
+HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+3.Set connection parameters
+------------------------------------------------------------------
+conn.setDoOutput(true);
+conn.setRequestMethod("POST");
+conn.setRequestProperty("Content-Type","application/json");
+
+4.Create Jsonobject and put our data to create a request
+--------------------------------------------------------------
+
+JSONObject jsonRequest= new JSONObject();
+jsonRequest.put("formFactorId", "83762244");
+jsonRequest.put("txnDateTime", mdy+mti);
+jsonRequest.put("encryptionFlag", "00");
+jsonRequest.put("payload","STX" + MPUtility.byteArrayToHexString(json.toString().getBytes()) + "ETX");                        
+request = jsonRequest.toString();
+LOG.info("Request: " + request);
+
+5.Write our request using OutputStream object
+------------------------------------------------------------
+
+OutputStream os = conn.getOutputStream();			
+os.write(request.getBytes());
+os.flush();	
+
+6.Get response code from the connection
+----------------------------------------------------------		
+if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+throw new IOException("Failed : HTTP error code : "+ conn.getResponseCode());
+	}
+
+7.get output from the REST service
+-----------------------------------------------------------
+
+BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+			String output;
+			StringBuilder builder = new StringBuilder();
+			LOG.info("Output from Server .... \n");
+			while ((output = br.readLine()) != null){
+				builder.append(output);
+			}
+						
+JSONObject jsonObj= new JSONObject(builder.toString());
+String payLoadHexString=jsonObj.getString("response");
+payLoadHexString=payLoadHexString.replaceAll("STX", "").replaceAll("ETX", "");
+String payLoadString=new String(HexStringConverter.hexToString(payLoadHexString));
+LOG.info("payLoadString ->" + payLoadString);
+
+8.Close the connection
+-------------------------------------------------------------
+
+conn.disconnect();
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+--------------------------------------------------------------------------------
+Git demo tutorial
+https://try.github.io/levels/1/challenges/1
+--------------------------------------------------------------------------------
+
+GIT Steps : 
+Step 1 : Create new workspace folder for git
+
+- open terminal from that workspace
+>git version
+
+- version should be 2.8.1
+
+>git clone aurusgit@172.30.40.109:products/storeplaceproject/storeplace/storeplace.git
+git clone aurusgit@10.200.10.87:products/storeplaceproject/storeplace/storeplace.git
+
+
+- redhat123
+
+>cd storeplace
+
+- after that check status
+>git status
+
+>git branch -a
+
+>git checkout storeplace_head
+
+>git branch
+
+>git config --global user.name "ksonawane"
+
+>git config --global user.email ksonawane@aurusinc.com
+
+- Now copy project file and class path file from your old project to current project.
+NOTE : these are hidden files, press CTRL+H
+
+- open eclipse in newly created workspace.
+- file->import->general->existing project into workspace
+- do not use storeplace_head for daily commit and update
+
+- Take checkout with name as JIRA ID of task.
+
+
+> git checkout -b WHIZMEPO-8534 origin/storeplace_head
+
+
+
+
