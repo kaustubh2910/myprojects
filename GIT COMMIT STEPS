@@ -1,0 +1,58 @@
+git status
+  794  git stash
+  795  git pull origin storeplace_head 
+  796  git stash pop
+  797  git add src/com/whizpay/merchportal/dashboard/sales/dao/SalesDAOImpl.java
+  798  git status
+  799  git commit -m "WHIZMEPO-8760  UAT46:-404 error on VOID transaction details in transaction history." 
+  800  git checkout storeplace_head
+  801  git branch
+  802  git pull origin storeplace_head
+  803  git merge Survey_edit
+  804  git push origin storeplace_head
+  805  git checkout Survey_edit
+  806  git log --oneline
+  807  git show --pretty="" --name-only 2bea94b
+  808  git status
+
+
+Keyexchange time zone filter : f62d596 WHIZMEPO-11505
+
+
+
+	git status
+	git clean -df 
+  794  git stash
+  795  git pull origin postgreSQL
+  796  git stash pop
+  797  git add src/com/whizpay/merchportal/dashboard/sales/dao/SalesDAOImpl.java
+  798  git status
+  799  git commit -m "WHIZMEPO-8760  UAT46:-404 error on VOID transaction details in transaction history." 
+  800  git checkout postgreSQL
+  801  git branch
+  802  git pull origin postgreSQL
+  803  git merge Postgres_11May
+  804  git push origin postgreSQL
+  805  git checkout Postgres_11May
+  806  git log --oneline
+  807  git show --pretty="" --name-only 2bea94b
+  808  git status
+
+
+
+
+WebContent/WEB-INF/dispatcher-intercepter.xml
+WebContent/js/kendoConfiguration.js
+WebContent/jsp/dashboard/advanceFilterSync.jsp
+WebContent/jsp/templates.jsp
+src/storeplace/constants/GenericConstants.java
+src/storeplace/dashboard/dashboard-servlet.xml
+src/storeplace/dashboard/sales/controller/SalesActionController.java
+src/storeplace/dashboard/sales/dao/ISalesDAO.java
+src/storeplace/dashboard/sales/dao/ISalesService.java
+src/storeplace/dashboard/sales/dao/SalesDAOImpl.java
+src/storeplace/dashboard/sales/dao/SalesServiceImpl.java
+src/storeplace/report/bo/RequestParameters.java
+src/storeplace/report/controller/StoreReportMultiActionController.java
+src/storeplace/report/dao/ReportDAOImpl.java
+
